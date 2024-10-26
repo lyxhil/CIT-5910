@@ -1,22 +1,22 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class BlackjackSolitaire {
     private Deck deck;
     private String[][] grid;
     private int discardsRemaining;
     private int cardsInGrid;
+    private Calculator calculator;
 
     public BlackjackSolitaire() {
         deck = new Deck();
 
-        grid =  new String[4][];
-        grid[0] = {"1", "2", "3", "4", "5"};
-        grid [1] = {"6", "7", "8", "9", "10"};
-        grid [2] = {"11", "12", "13"};
-        grid [3] = {"14", "15", "16"};
+        grid =  new String[4][5];
 
         discardsRemaining = 4;
         cardsInGrid = 0;
+
+        calculator = new Calculator();
     }
 
     public void play() {
@@ -42,10 +42,15 @@ public class BlackjackSolitaire {
             }
         }
 
-        int score = calculateScore();
+        int score = Calculator.score();
+        System.out.println("Game over! You scored " + score + " points.");
     }
 
     public void displayGrid() {
+        grid[0] = {"1", "2", "3", "4", "5"};
+        grid [1] = {"6", "7", "8", "9", "10"};
+        grid [2] = {" ", "11", "12", "13", " "};
+        grid [3] = {" ", "14", "15", "16", " "};
         System.out.println(grid);
         System.out.println("Discards remaining: " + discardsRemaining);
         }
@@ -57,7 +62,7 @@ public class BlackjackSolitaire {
         String position = in.next();
 
         for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
                 if (position,equals(grid[i][j])) {
                     validPosition = true;
                 }
@@ -66,8 +71,8 @@ public class BlackjackSolitaire {
 
         if (validPosition) {
             for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[i].length; i++) {
-                    if (position == grid[i][j]) {
+                for (int j = 0; j < grid[i].length; j++) {
+                    if (position.equals(grid[i][j])) {
                         grid[i][j] = position;
                         cardsInGrid++;
                     }
@@ -77,11 +82,6 @@ public class BlackjackSolitaire {
             System.out.println("Position " + position + "has been filled. Please select another unfilled position.");
             selectGridPosition();
         }
-    }
-
-    public int calculateScore() {
-        int score = 0;
-        return score;
     }
 
 }
