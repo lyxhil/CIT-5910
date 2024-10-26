@@ -19,4 +19,16 @@ public class Card {
         return rank + suit;
     }
 
+    public int getValue() {
+        int value;
+        if (rank.equals("J") || rank.equals("Q") || rank.equals("K")) {
+            value = 10;
+        } else if (rank == "A") {
+            value = 1;
+        } else {
+            value = Integer.parseInt(rank);
+        }
+        return value;
+    }
+
 }
