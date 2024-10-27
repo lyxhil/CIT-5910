@@ -11,7 +11,12 @@ public class BlackjackSolitaire {
     public BlackjackSolitaire() {
         deck = new Deck();
 
-        grid =  new String[4][5];
+        grid =  new String[][] {
+            {"1", "2", "3", "4", "5"},
+            {"6", "7", "8", "9", "10"},
+            {" ", "11", "12", "13", " "},
+            {" ", "14", "15", "16", " "}
+        };
 
         discardsRemaining = 4;
         cardsInGrid = 0;
@@ -47,13 +52,9 @@ public class BlackjackSolitaire {
     }
 
     public void displayGrid() {
-        grid[0] = {"1", "2", "3", "4", "5"};
-        grid [1] = {"6", "7", "8", "9", "10"};
-        grid [2] = {" ", "11", "12", "13", " "};
-        grid [3] = {" ", "14", "15", "16", " "};
         System.out.println(grid);
         System.out.println("Discards remaining: " + discardsRemaining);
-        }
+    }
 
     public void selectGridPosition() {
         boolean validPosition = false;
@@ -63,7 +64,7 @@ public class BlackjackSolitaire {
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
-                if (position,equals(grid[i][j])) {
+                if (position.equals(grid[i][j])) {
                     validPosition = true;
                 }
             }
