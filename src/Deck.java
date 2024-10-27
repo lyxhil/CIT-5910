@@ -8,7 +8,7 @@ public class Deck {
     public Deck() {
         deck = new ArrayList<Card>();
         char[] suit = {'D', 'H', 'S', 'C'};
-        String[] rank = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+        String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 
         // Deck of 52 cards
         for (int i = 0; i < suit.length; i++) {

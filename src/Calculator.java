@@ -4,7 +4,6 @@ public class Calculator {
     private Combinations combi;
     private Card card;
 
-
     // All combinations are in arraylist named combinations. For each combination, we have to determine the value of the cards and sum them up.
     public int totalScore(String[][] grid){
         int totalScore = 0;
