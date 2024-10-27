@@ -10,7 +10,7 @@ public class Combinations {
     private void generateCombi(String[] arr, int combiLength, int startPosition, ArrayList<String> currentCombi) {
         // Once length of current combination hits the length required for this combination, add it to the allCombi arraylist
         if (currentCombi.size() == combiLength) {
-            allCombi.add(String.join("", currentCombi));
+            allCombi.add(String.join(", ", currentCombi));
             return;
         }
 

@@ -47,8 +47,8 @@ public class BlackjackSolitaire {
             }
         }
 
-        int score = Calculator.score();
-        System.out.println("Game over! You scored " + score + " points.");
+        // int score = Calculator.score();
+        // System.out.println("Game over! You scored " + score + " points.");
     }
 
     public void displayGrid() {
