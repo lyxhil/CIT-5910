@@ -40,7 +40,8 @@ public class BlackjackSolitaire {
         }
 
         // When cardsInGrid == 16, game is over so scores should be calculated
-        System.out.println("Number of Combinations: " + combi.collectAllCombi(grid).size()); // Expected: 95
+        // System.out.println("Number of Combinations: " + combi.collectAllCombi(grid).size()); // Expected: 95
+        System.out.println("All 16 positions have been filled. Your score is being calculated");
         int score = calculator.totalScore(grid);
         System.out.println("Game over! You scored " + score + " points.");
     }

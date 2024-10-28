@@ -77,4 +77,34 @@ public class Calculator {
         }
         return combiScore;
     }
+
+    public static void main(String[] args) {
+        String[][] test1 = {
+                {" ", "3C", "AC", "4S", " "}
+        };
+
+        Calculator calc = new Calculator();
+        System.out.println("Test 1 - Expected: 6, Actual: " + calc.totalScore(test1));
+
+        String[][] test2 = {
+                {"KH", "3H", "JH", "10H", "QH"},
+                {" ", "3C", "AC", "4S", " "}
+        };
+
+        System.out.println("Test 2 - Expected: 52, Actual: " + calc.totalScore(test2));
+
+        String[][] test3 = {
+                {"AD", "5H", "7S", "10C", "AH"},
+        };
+
+        System.out.println("Test 3 - Expected: 57, Actual: " + calc.totalScore(test3));
+
+        String[][] test4 = {
+                {"AD", "AH"},
+                {"7S", "10C"},
+                {" ", "AD"},
+        };
+        System.out.println("Test 4 - Expected: 28, Actual: " + calc.totalScore(test4));
+
+    }
 }
